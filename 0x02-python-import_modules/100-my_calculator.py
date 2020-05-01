@@ -1,25 +1,25 @@
 #!/usr/bin/python3
-from sys import argv
-from calculator_1 import add, sub, mul, div
 if __name__ == "__main__":
-    argc = len(argv)
-    operator = {'+', '-', '*', '/'}
-
-    if argc != 4:
-        print("Usage: ./100-my_calculator.py <a> <opeartor> <b>")
+    from calculator_1 import add, sub, mul, div
+    from sys import argv
+    sign = {'+', '-', '*', '/'}
+    if len(argv) is not 4:
+        print('Usage: ./100-my_calculator.py <a> <operator> <b>')
         exit(1)
+
+    if not argv[2] in sign:
+        print('Unknown operator. Available operators: +, -, * and /')
+        exit(1)
+
+    elif argv[2] == "+":
+        print("{} + {} = {}".format(argv[1], argv[3],
+                                    add(int(argv[1]), int(argv[3]))))
+    elif argv[2] == "-":
+        print("{} - {} = {}".format(argv[1], argv[3],
+                                    sub(int(argv[1]), int(argv[3]))))
+    elif argv[2] == "*":
+        print("{} * {} = {}".format(argv[1], argv[3],
+                                    mul(int(argv[1]), int(argv[3]))))
     else:
-        a = int(argv[1])
-        b = int(argv[3])
-        if not argv[2] in operator:
-            print("Unknow operator. Available operators: +, -, * and /")
-            exit(1)
-            sign = argv[2]
-            if sign == '+':
-                print("{} + {} = {}".format(a, b, add(a, b)))
-            elif sign == '-':
-                print("{} - {} = {}".format(a, b, sub(a, b)))
-            elif sign == '*':
-                print("{} * {} = {}".format(a, b, mul(a, b)))
-            elif sign == '/':
-                print("{} / {} = {}".format(a, b, div(a, b)))
+        print("{} / {} = {}".format(argv[1], argv[3],
+                                    div(int(argv[1]), int(argv[3]))))
