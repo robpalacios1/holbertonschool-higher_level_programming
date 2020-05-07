@@ -8,7 +8,7 @@ def roman_to_int(roman_string):
     for i in roman_string:
         if i in roman:
             a = a + roman[i]
-    for compare in range (0, len(roman_string) - 1):
+    for compare in range(0, len(roman_string) - 1):
         if roman[roman_string[compare]] < roman[roman_string[compare + 1]]:
             a = a - 2
     return a
