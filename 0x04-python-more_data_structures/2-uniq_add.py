@@ -1,7 +1,7 @@
 #!/usr/bin/python3
 def uniq_add(my_list=[]):
-    retval = 0
+    a = 0
     uniq = set(my_list)
     for i in uniq:
-        retval = retval + i
-    return retval
+        a = a + i
+    return a
