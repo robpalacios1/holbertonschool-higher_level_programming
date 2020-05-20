@@ -1,11 +1,11 @@
 #!/usr/bin/python3
-'''Square class'''
+'''Square Class'''
 
 
 class Square:
-    '''private instance attribute size'''
+    '''square private instance attritute size'''
     def __init__(self, size=0, position=(0, 0)):
-        '''inalitation with size'''
+        '''instantiation with size'''
         self.size = size
         self.position = position
 
@@ -20,15 +20,15 @@ class Square:
         if type(value) is not int:
             raise TypeError("size must be an integer")
         if value < 0:
-            raise ValueError("size must be >=0")
+            raise ValueError("size must be >= 0")
         self.__size = value
 
     def area(self):
-        '''return the square area'''
+        '''returns the current square area'''
         return self.__size ** 2
 
     def my_print(self):
-        '''prints square with '#' character'''
+        '''print square with "#" character'''
         if self.__size == 0:
             print("")
         if self.__position[1] > 0:
