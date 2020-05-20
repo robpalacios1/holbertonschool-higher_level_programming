@@ -23,23 +23,6 @@ class Square:
             raise ValueError("size must be >= 0")
         self.__size = value
 
-    def area(self):
-        '''returns the current square area'''
-        return self.__size ** 2
-
-    def my_print(self):
-        '''print square with "#" character'''
-        if self.__size == 0:
-            print("")
-        if self.__position[1] > 0:
-            for i in range(self.__position[1]):
-                print("")
-        for i in range(self.__size):
-            print("{}".format(" " * self.__position[0]), end="")
-            for j in range(self.__size):
-                print('#', end="")
-            print("")
-
     @property
     def position(self):
         '''getter for position'''
@@ -53,3 +36,20 @@ class Square:
            len(value) != 2:
             raise TypeError("position must be a tuple of 2 positive integers")
         self.__position = value
+
+    def area(self):
+        '''returns the current square area'''
+        return self.__size ** 2
+
+    def my_print(self):
+        '''print square with "#" character'''
+        if self.size == 0:
+            print("")
+        if self.position[1] > 0:
+            for i in range(self.__position[1]):
+                print("")
+        for i in range(self.__size):
+            print("{}".format(" " * self.position[0]), end="")
+            for j in range(self.size):
+                print('#', end="")
+            print("")
