@@ -1,91 +1,59 @@
-==============================
-tests for 0-add_integer module
-==============================
+=============================
+The ``0-add_integer`` module
+=============================
 
-
-Test for importing the function add_integer
--------------------------------------------
->>> add_integer = __import__('0-add_integer').add_integer
-
-
-Check addition of two positive numbers
---------------------------------------
->>> add_integer = __import__('0-add_integer').add_integer
->>> add_integer(4, 5)
-9
-
-
-Check addition of two negative numbers
---------------------------------------
->>> add_integer(-4, -5)
--9
-
-
-Check addition of a positive with a negative number
---------------------------------------------------
->>> add_integer(4, -5)
--1
-
-
-Check addition of a negative with a positive number
----------------------------------------------------
->>> add_integer(-4, 5)
-1
-
-
-Check first input as a string
+Using ``add_integer``
 -----------------------------
->>> add_integer('h', 5)
-Traceback (most recent call last):
- ...
- TypeError: a must be an integer
 
+First import
+``add_integer`` from the ``0-add_integer`` module:
 
-check second input as a string
--------------------------------
->>> add_integer(5, 'c')
-Traceback (most recent call last):
- ...
- TypeError: b must be an integer
+    >>> add_integer = __import__("0-add_integer").add_integer
 
-
-Check first input as a float
-----------------------------
->>> add_integer(1.1, 9)
-10
-
-
-Check second input as a float
+Normal cases:
 -----------------------------
->>> add_integer(7, 3.7)
-10
 
+    >>> add_integer(1, 2)
+    3
+    >>> add_integer(123456789876543212345678976543234567, 2123456789876543212345678765432134567876543)
+    2123456913333333088888891111111111111111110
+    >>> add_integer(-100, -55)
+    -155
+    >>> add_integer(-100, 255)
+    155
+    >>> a = 8
+    >>> add_integer(a, 2)
+    10
 
-Check first argument as a list
-------------------------------
->>> add_integer([1], 3.7)
-Traceback (most recent call last):
- ...
- TypeError: a must be an integer
+Float Cases:
+-----------------------------
 
+    >>> add_integer(-100.45, 25.56)
+    -75
+    >>> add_integer(-123456787654.9876543234567, 98765434567.97656789)
+    -24691353087
 
-Check second argument as a dictionary
--------------------------------------
->>> add_integer(7, {"Roberto": 67})
-Traceback (most recent call last):
- ...
- TypeError: b must be an integer
+Error Cases:
+-----------------------------
 
-
-Check for more than two arguments
----------------------------------
->>> add_integer(7, 8, 8)
-Traceback (most recent call last):
- ...
- TypeError: add_integer() takes from 1 to 2 positional arguments but 3 were given
-
-
-Check for only first argument
----------------------------
->>> add_integer(7)
-105
+    >>> add_integer("a", 2)
+    Traceback (most recent call last):
+    TypeError: a must be an integer
+    >>> add_integer([2, 4, 5], 2)
+    Traceback (most recent call last):
+    TypeError: a must be an integer
+    >>> add_integer(None, None)
+    Traceback (most recent call last):
+    TypeError: a must be an integer
+    >>> add_integer(b, 2)
+    Traceback (most recent call last):
+    NameError: name 'b' is not defined
+    >>> add_integer(float('inf'), 2)
+    Traceback (most recent call last):
+    OverflowError: cannot convert float infinity to integer
+    >>> add_integer(10, (1, 1))
+    Traceback (most recent call last):
+    TypeError: b must be an integer
+    >>> add_integer(98, "Holberton")
+    Traceback (most recent call last):
+    TypeError: b must be an integer
