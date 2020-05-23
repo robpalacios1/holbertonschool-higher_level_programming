@@ -27,7 +27,7 @@ Type size is float:
     >>> print_square(6.0)
     Traceback (most recent call last):
     ...
-    TypeError: 'float' object cannot be interpreted as an integer
+    TypeError: size must be an integer
 
 Size is zero:
     >>> print_square(0)
