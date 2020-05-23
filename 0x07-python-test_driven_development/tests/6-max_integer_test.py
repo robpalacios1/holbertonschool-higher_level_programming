@@ -6,7 +6,7 @@ max_integer = __import__('6-max_integer').max_integer
 
 
 class TestMaxInteger(unittest.TestCase):
-
+    '''Unit cases for max_integer'''
     def test_doc(self):
         self.assertTrue(len(max_integer.__doc__) > 1)
 
