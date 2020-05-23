@@ -1,44 +1,86 @@
-The ``3-say_my_name`` module and task 2
-======================
+Using ``say_my_name``
 
-Using ``say_my_name`` function
--------------------
+args 'first_name' and 'last_name' should be 'str' type.
 
-Importing the function from the module:
-   	>>> say_my_name = __import__('3-say_my_name').say_my_name
+***********************************************************************
 
-Basic test:
-	>>> say_my_name("John", "Smith")
-   	My name is John Smith
+First import ``say_my_name``
 
-Non string argument:
-    	>>> say_my_name("Walter", [1, 2])
-   	Traceback (most recent call last):
-   	...
-   	TypeError: last_name must be a string
+    >>> say_my_name = __import__('3-say_my_name').say_my_name
 
-First string argument:
-         >>> say_my_name("Roberto")
-	 My name is Roberto 
+***********************************************************************
 
-First argument is not a string:
-      	>>> say_my_name(123)
-   	Traceback (most recent call last):
-   	...
-   	TypeError: fisrt_name must be a string
+Test cases:
 
-Missing argumets:
-   	>>> say_my_name()
-   	Traceback (most recent call last):
-  	...
-   	TypeError: say_my_name() missing 1 required positional argument: 'first_name'
+    # normal behavior 1.
+    -------------------
+    >>> say_my_name("Tyrion", "Lannister")
+    My name is Tyrion Lannister
 
-Module docstring:
-        >>> m = __import__("3-say_my_name").__doc__
-   	>>> len(m) > 1
-   	True
 
-Function docstring:
-   	>>> f = __import__("3-say_my_name").say_my_name.__doc__
-   	>>> len(f) > 1
-   	True
+
+    # normal behavior 2.
+    -----------------------------------
+    >>> say_my_name("John", "Snow")
+    My name is John Snow
+
+
+
+    #case0: NO inputs.
+    -------------------------------------
+    >>> say_my_name(None)
+    Traceback (most recent call last):
+    ...
+    TypeError: fisrt_name must be a string
+
+
+
+    # case1: only 'first_name' input.
+    -------------------------------------
+    >>> say_my_name("Bob")
+    My name is Bob 
+
+
+
+    # case2: 'last_name' is None.
+    -------------------------------------
+    >>> say_my_name("Bob", None)
+    Traceback (most recent call last):
+    ...
+    TypeError: last_name must be a string
+
+
+
+    # case3: 'first_name' is None.
+    -------------------------------------
+    >>> say_my_name(None, "Bob")
+    Traceback (most recent call last):
+    ...
+    TypeError: fisrt_name must be a string
+
+
+
+    # case4: 'first_name' is a 'int' type:
+    ---------------------------------------
+    >>> say_my_name(12, "White")
+    Traceback (most recent call last):
+    ...
+    TypeError: fisrt_name must be a string
+
+
+
+    # case5: last_name' is a 'int' type:
+    --------------------------------------
+    >>> say_my_name("White", 12)
+    Traceback (most recent call last):
+    ...
+    TypeError: last_name must be a string
+
+
+
+    # case6: missing two arguments:
+    -------------------------------
+    >>> say_my_name()
+    Traceback (most recent call last):
+    ...
+    TypeError: say_my_name() missing 1 required positional argument: 'first_name'
