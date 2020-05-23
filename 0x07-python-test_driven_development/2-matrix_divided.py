@@ -1,6 +1,7 @@
 #!/usr/bin/python3
 """matrix_divided"""
 
+
 def matrix_divided(matrix, div):
     ''' Divide each element of a matrix by dev '''
     errors = {
