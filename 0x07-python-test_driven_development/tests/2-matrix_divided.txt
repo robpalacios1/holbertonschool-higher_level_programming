@@ -1,80 +1,77 @@
-=======================
-2-matrix_divided module
-=======================
-This library is very simple, since it only has one function called
-``matrix_divided()``.
+The ``2-matrix_divided`` module and task 1
+======================
 
-Numbers
-=======
+Using ``matrix_divided`` function
+-------------------
 
-``matrix_divided()`` divides a matrix and returns a new matrix with the result.
+Importing the function from the module:
+	>>> matrix_divided = __import__("2-matrix_divided").matrix_divided
 
-::
+Regular division:
+	>>> matrix = [[1, 2, 3], [4, 5, 6]]
+	>>> matrix_divided(matrix, 3)
+	[[0.33, 0.67, 1.0], [1.33, 1.67, 2.0]]
 
-    >>> matrix_divided = __import__('2-matrix_divided').matrix_divided
-    >>> matrix = [[2, 2, 3], [4, 5, 6], [3, 4, 5]]
-    >>> matrix_divided(matrix, 3)
-    [[0.67, 0.67, 1.0], [1.33, 1.67, 2.0], [1.0, 1.33, 1.67]]
+An element in matrix is not a list:
+   	>>> matrix = [[1, 2, 3], 4]
+        >>> matrix_divided(matrix, 3)
+       	Traceback (most recent call last):
+	...
+	TypeError: matrix must be a matrix (list of lists) of integers/floats
 
-    >>> matrix_divided(matrix, float("inf"))
-    [[0.0, 0.0, 0.0], [0.0, 0.0, 0.0], [0.0, 0.0, 0.0]]
+All the elements in matrix are not a list:
+    	>>> matrix = [1, 2, 3, 4]
+	>>> matrix_divided(matrix, 3)
+	Traceback (most recent call last):
+	...
+	TypeError: matrix must be a matrix (list of lists) of integers/floats
 
-    >>> matrix = [[2, 3], [4, 0]]
-    >>> matrix_divided(matrix, 0.5)
-    [[4.0, 6.0], [8.0, 0.0]]
+List len are not equal:
+     	>>> matrix_divided([[1, 2, 3], [3, 2]], 12)
+	Traceback (most recent call last):
+	...
+	TypeError: Each row of the matrix must have the same size
 
-Trying Errors
-::
-    >>> matrix = [[]]
-    >>> matrix_divided(matrix, 3)
-    Traceback (most recent call last):
-    ...
-    TypeError: matrix must be a matrix (list of lists) of integers/floats
-    >>> matrix = [[1, 2], [1, 2, 3]]
+List have string values:
+     	>>> matrix_divided([[1, "2"], ["3", 4]], 12)
+	Traceback (most recent call last):
+	...
+	TypeError: matrix must be a matrix (list of lists) of integers/floats
 
-    >>> matrix_divided(matrix, 3)
-    Traceback (most recent call last):
-    ...
-    TypeError: Each row of the matrix must have the same size
+Div is a string:
+       	>>> matrix_divided([[1, 2, 3], [4, 5, 6]], "12")
+	Traceback (most recent call last):
+	...
+	TypeError: div must be a number
 
-    >>> matrix = [[1, 2, "a"], [1, 23]]
-    >>> matrix_divided(matrix, 4)
-    Traceback (most recent call last):
-    ...
-    TypeError: matrix must be a matrix (list of lists) of integers/floats
+Div is equal to 0:
+       	>>> matrix_divided([[1, 2, 3], [4, 5, 6]], 0)
+	Traceback (most recent call last):
+	...
+	ZeroDivisionError: division by zero
 
-    >>> matrix = [["2", 2, 3], [4, 5, 6], [3, 4, 5]]
-    >>> matrix_divided(matrix, 4)
-    Traceback (most recent call last):
-    ...
-    TypeError: matrix must be a matrix (list of lists) of integers/floats
+Div is equal to infinite float:
+        >>> matrix_divided([[1, 2], [2, 1]], float('inf'))
+	[[0.0, 0.0], [0.0, 0.0]]
 
-    >>> matrix = [[2, 3], [4, 5, 6], [3, 4, 5]]
-    >>> matrix_divided(matrix, 4)
-    Traceback (most recent call last):
-    ...
-    TypeError: Each row of the matrix must have the same size
+Missing argumets:
+	>>> matrix_divided()
+	Traceback (most recent call last):
+	...
+	TypeError: matrix_divided() missing 2 required positional arguments: 'matrix' and 'div'
 
-    >>> matrix = [[2, 3], [1, 2], []]
-    >>> matrix_divided(matrix, 4)
-    Traceback (most recent call last):
-    ...
-    TypeError: Each row of the matrix must have the same size
+Missing one argumet:
+	>>> matrix_divided([1,2])
+	Traceback (most recent call last):
+	...
+	TypeError: matrix_divided() missing 1 required positional argument: 'div'
 
-    >>> matrix = [[2, 3], [4, 0]]
-    >>> matrix_divided(matrix, 0)
-    Traceback (most recent call last):
-    ...
-    ZeroDivisionError: division by zero
+Module docstring:
+        >>> m = __import__("2-matrix_divided").__doc__
+	>>> len(m) > 1
+	True
 
-    >>> matrix = [[2, 3], [4, 0]]
-    >>> matrix_divided(matrix, "0")
-    Traceback (most recent call last):
-    ...
-    TypeError: div must be a number
-
-    >>> matrix = None
-    >>> matrix_divided(matrix, 1)
-    Traceback (most recent call last):
-    ...
-    TypeError: matrix must be a matrix (list of lists) of integers/floats
+Function docstring:
+	>>> f = __import__("2-matrix_divided").matrix_divided.__doc__
+	>>> len(f) > 1
+	True
