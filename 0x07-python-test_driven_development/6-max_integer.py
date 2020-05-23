@@ -14,5 +14,5 @@ def max_integer(list=[]):
     while i < len(list):
         if list[i] > result:
             result = list[i]
-            i += 1
+        i += 1
     return result
