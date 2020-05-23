@@ -31,7 +31,7 @@ Test cases:
     >>> say_my_name(None)
     Traceback (most recent call last):
     ...
-    TypeError: fisrt_name must be a string
+    TypeError: first_name must be a string
 
 
 
@@ -56,7 +56,7 @@ Test cases:
     >>> say_my_name(None, "Bob")
     Traceback (most recent call last):
     ...
-    TypeError: fisrt_name must be a string
+    TypeError: first_name must be a string
 
 
 
@@ -65,7 +65,7 @@ Test cases:
     >>> say_my_name(12, "White")
     Traceback (most recent call last):
     ...
-    TypeError: fisrt_name must be a string
+    TypeError: first_name must be a string
 
 
 
