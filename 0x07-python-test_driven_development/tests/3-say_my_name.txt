@@ -17,6 +17,10 @@ Non string argument:
    	...
    	TypeError: last_name must be a string
 
+First string argument:
+         >>> say_my_name("Roberto")
+	 My name is Roberto 
+
 First argument is not a string:
       	>>> say_my_name(123)
    	Traceback (most recent call last):
