@@ -3,6 +3,7 @@
 
 
 class Rectangle:
+    '''rectangle class'''
     def __init__(self, width=0, height=0):
         '''Initialize rectangle value
            width and height
@@ -41,15 +42,18 @@ class Rectangle:
             self.__height = value
 
     def area(self):
+        '''return area rectangle'''
         return self.__width * self.__height
 
     def perimeter(self):
+        '''return perimeter rectangle'''
         if self.__width == 0 or self.__height == 0:
             return 0
         else:
             return (self.__width * 2) + (self.__height * 2)
 
     def __str__(self):
+        '''string representation of a rectangle'''
         a = ""
         for h in range(self.__height):
             for w in range(self.__width):
