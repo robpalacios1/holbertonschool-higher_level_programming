@@ -50,10 +50,10 @@ class Rectangle:
             return (self.__width * 2) + (self.__height * 2)
 
     def __str__(self):
-        retval = ""
+        a = ""
         for h in range(self.__height):
             for w in range(self.__width):
-                retval = retval + '#'
+                a = a + '#'
             if h != self.__height - 1:
-                retval = retval + '\n'
-        return retval
+                a = a + '\n'
+        return a
