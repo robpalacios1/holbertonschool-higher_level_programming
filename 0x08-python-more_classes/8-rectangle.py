@@ -1,9 +1,12 @@
 #!/usr/bin/python3
 '''Rectangle module'''
+
+
 class Rectangle:
     '''rectangle class'''
     number_of_instances = 0
     print_symbol = "#"
+
     def __init__(self, width=0, height=0):
         '''initialize rectangle value
            width and height
@@ -68,7 +71,7 @@ class Rectangle:
         """
         return "Rectangle({}, {})".format(self.__width, self.__height)
 
-    def __del_(self):
+    def __del__(self):
         '''methods that going to be deleted'''
         print("Bye rectangle...")
         type(self).number_of_instances = type(self).number_of_instances - 1
