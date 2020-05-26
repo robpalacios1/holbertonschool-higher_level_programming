@@ -13,6 +13,7 @@ class Rectangle:
         '''
         self.__width = width
         self.__height = height
+        type(self).number_of_instances = type(self).number_of_instances + 1
 
     @property
     def width(self):
@@ -53,16 +54,16 @@ class Rectangle:
         else:
             return (self.__width * 2) + (self.__height * 2)
 
-        def __str__(self):
-            '''string representation of rectangle'''
-            symbol = str(self.print_symbol)
-            a = ""
-            for h in range(self.__height):
-                for w in range(self.__width):
-                    a = a + symbol
-                    if h != self.__height - 1:
-                        a = a + '\n'
-                return a
+    def __str__(self):
+        '''string representation of rectangle'''
+        symbol = str(self.print_symbol)
+        a = ""
+        for h in range(self.__height):
+            for w in range(self.__width):
+                a = a + symbol
+            if h != self.__height - 1:
+                a = a + '\n'
+        return a
 
     def __repr__(self):
         """
