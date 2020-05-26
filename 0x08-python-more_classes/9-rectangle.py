@@ -11,8 +11,8 @@ class Rectangle:
         '''initialize rectangle value
            width and height
         '''
-        self.__width = width
-        self.__height = height
+        self.width = width
+        self.height = height
         type(self).number_of_instances = type(self).number_of_instances + 1
 
     @property
@@ -28,7 +28,7 @@ class Rectangle:
         if value < 0:
             raise ValueError("width must be >= 0")
         else:
-            self.__width == value
+            self.__width = value
 
     @property
     def height(self):
@@ -41,7 +41,7 @@ class Rectangle:
         if type(value) is not int:
             raise TypeError("height must be an integer")
         else:
-            self.__height == value
+            self.__height = value
 
     def area(self):
         '''Return area rectangle'''
@@ -49,15 +49,17 @@ class Rectangle:
 
     def perimeter(self):
         '''Return perimeter rectangle'''
-        if self.__width == 0 or self.__height == 0:
+        if self.width == 0 or self.height == 0:
             return 0
         else:
-            return (self.__width * 2) + (self.__height * 2)
+            return (self.width * 2) + (self.height * 2)
 
     def __str__(self):
         '''string representation of rectangle'''
         symbol = str(self.print_symbol)
         a = ""
+        if self.width == 0 or self.height == 0:
+            return ""
         for h in range(self.__height):
             for w in range(self.__width):
                 a = a + symbol
