@@ -55,6 +55,8 @@ class Rectangle:
     def __str__(self):
         '''string representation of a rectangle'''
         a = ""
+        if self.__width == 0 or self.__height == 0:
+            return ""
         for h in range(self.__height):
             for w in range(self.__width):
                 a = a + '#'
