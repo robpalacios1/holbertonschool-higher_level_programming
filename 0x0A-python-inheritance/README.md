@@ -2,7 +2,7 @@
 ## Learning Objectives
 At the end of this project, you are expected to be able to explain to anyone, without the help of Google:
 
-## General :musle:
+## General:musle:
 - Why Python programming is awesome (don’t forget to tweet today, with the hashtag #pythoniscool :))
 - What is a superclass, baseclass or parentclass
 - What is a subclass
@@ -16,7 +16,7 @@ At the end of this project, you are expected to be able to explain to anyone, wi
 - What is the purpose of inheritance
 - What are, when and how to use isinstance, issubclass, type and super built-in functions
 
-## Requirements :wrench"
+## Requirements:wrench:
 ### Python Scripts
 - Allowed editors: vi, vim, emacs
 - All your files will be interpreted/compiled on Ubuntu 14.04 LTS using python3 (version 3.4.3)
