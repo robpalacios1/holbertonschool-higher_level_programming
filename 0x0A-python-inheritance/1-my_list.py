@@ -1,4 +1,4 @@
-#!/def/usr/python3
+#!/usr/bin/python3
 '''My list module'''
 
 
