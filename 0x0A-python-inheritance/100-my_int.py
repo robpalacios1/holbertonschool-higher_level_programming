@@ -1,5 +1,7 @@
 #!/usr/bin/python3
 '''MyInt module'''
+
+
 class MyInt(int):
     '''class MyInt'''
     def __new__(cls, *args, **kwargs):
