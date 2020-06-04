@@ -18,7 +18,7 @@ class Student:
         else:
             for i in attrs:
                 if i in self.__dict__:
-                    new[i] = self.__dict__
+                    new[i] = self.__dict__[i]
                 else:
                     continue
             return new
