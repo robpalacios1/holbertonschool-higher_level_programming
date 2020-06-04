@@ -1,5 +1,9 @@
 #!/usr/bin/python3
+'''pascal triangle module'''
+
+
 def pascal_triangle(n):
+    '''return a list of integers of pascal triangle '''
     newlist = []
     for i in range(n):
         newlist.append([])
