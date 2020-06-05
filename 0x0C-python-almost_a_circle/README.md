@@ -1,4 +1,4 @@
-# :gears: 0x0C. Python - Almost a circle :gears:
+# :gear: 0x0C. Python - Almost a circle :gear:
  
 ## General
 - What is Unit testing and how to implement it in a large project
@@ -8,7 +8,7 @@
 - What is **kwargs and how to use it
 - How to handle named arguments in a function
 
-### Requirements :ruler:
+### Requirements :triangular_ruler:
 - Python Scripts
 - Allowed editors: vi, vim, emacs
 - All your files will be interpreted/compiled on Ubuntu 14.04 LTS using python3 (version 3.4.3)
