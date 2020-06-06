@@ -44,10 +44,12 @@ class Rectangle(Base):
 
     @property
     def x(self):
+        '''getter for x'''
         return self.__x
 
     @x.setter
     def x(self, value):
+        '''set attribute x'''
         if type(value) is not int:
             raise TypeError("x must be an integer")
         if value < 0:
@@ -56,10 +58,12 @@ class Rectangle(Base):
 
     @property
     def y(self):
+        '''getter for y'''
         return self.__y
 
     @y.setter
     def y(self, value):
+        '''set attribute y'''
         if type(value) is not int:
             raise TypeError("y must be an integer")
         if value < 0:
