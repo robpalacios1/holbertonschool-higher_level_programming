@@ -35,3 +35,11 @@ class Base:
                 new_list.append(cls.to_dictionary(obj))
         with open(file_name, mode='w', encoding='utf-8')as f:
             f.write(cls.to_json_string(new_list))
+
+    @staticmethod
+    def from_json_string(json_string):
+        '''return list of Json string representation'''
+        if json_string is None or len(json_string) < 1:
+            return "[]"
+        else:
+            return json.loads(json_string)
