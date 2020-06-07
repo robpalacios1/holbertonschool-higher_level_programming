@@ -92,6 +92,7 @@ class Rectangle(Base):
                                                 self.__width, self.__height)
 
     def update(self, *args, **kwargs):
+        '''assign argument each attribute'''
         if args:
             for arg in range(len(args)):
                 if args == 0:
