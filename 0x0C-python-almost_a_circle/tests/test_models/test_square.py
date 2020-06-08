@@ -3,7 +3,6 @@
 
 
 import unittest
-from models import models
 from models.square import Square
 
 
@@ -73,5 +72,5 @@ class TestSquare(unittest.TestCase):
         new.update(5, 6, 7, 8)
         self.assertEqual(new.id, 5)
         self.assertEqual(new.size, 6)
-        self.assertEqual(new.x, 7)
-        self.assertEqual(new.y, 8)
+        self.assertEqual(new.x, 8)
+        self.assertEqual(new.y, 3)
