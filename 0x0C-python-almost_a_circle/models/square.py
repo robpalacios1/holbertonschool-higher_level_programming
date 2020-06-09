@@ -55,8 +55,7 @@ class Square(Rectangle):
         '''return a dictionary of a square'''
         new_dict = {}
         new_dict['id'] = self.id
-        new_dict['width'] = self.width
-        new_dict['height'] = self.height
+        new_dict['size'] = self.size
         new_dict['x'] = self.x
         new_dict['y'] = self.y
         return new_dict
