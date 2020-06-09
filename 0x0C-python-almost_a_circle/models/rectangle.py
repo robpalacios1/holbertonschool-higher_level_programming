@@ -95,15 +95,15 @@ class Rectangle(Base):
         '''assign argument each attribute'''
         if args:
             for arg in range(len(args)):
-                if args == 0:
+                if arg == 0:
                     self.id = args[arg]
-                if args == 1:
+                if arg == 1:
                     self.__width = args[arg]
-                if args == 2:
+                if arg == 2:
                     self.__height = args[arg]
-                if args == 3:
+                if arg == 3:
                     self.__x = args[arg]
-                if args == 4:
+                if arg == 4:
                     self.__y = args[arg]
         else:
             if 'id' in kwargs:
