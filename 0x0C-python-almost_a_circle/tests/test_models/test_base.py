@@ -4,8 +4,13 @@
 
 import unittest
 import json
+from io import StringIO
+import sys
+import contextlib
+import pep8
 from models.base import Base
-from models import base
+from models.rectangle import Rectangle
+from models.square import Square
 
 
 class Test_Docs(unittest.TestCase):
